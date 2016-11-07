@@ -1,0 +1,103 @@
+.search-wrapper {
+    padding: 12px 0;
+    background: #F1F1F1;
+    border-bottom: 1px solid #e5e5e5;
+
+    .input-group {
+        max-width: 42em;
+        margin: 0 auto;
+
+        .form-control {
+            box-shadow: none;
+            border-radius: 0;
+        }
+        button {
+            outline: 0;
+            border-radius: 0;
+        }
+    }
+}
+
+.search-results-wrapper {
+    margin-top: 20px;
+
+    .poster {
+        height: 225px;
+        object-fit: contain;
+    }
+    .poster-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+    .no-items {
+        font-size: 36px;
+        color: #f1f1f1;
+        text-align: center;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Chrome/Safari/Opera */
+        -khtml-user-select: none; /* Konqueror */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+    }
+    
+    /* Dimmer */
+    .dimmable .dimmer {
+        opacity: 0;
+        position: absolute;
+        width: 150px;
+        height: calc(100% - 33px);
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background: rgba(45, 45, 45, 0.95);
+          opacity: 1;
+          cursor: pointer;
+          transition: 0.2s;
+          -moz-transition: 0.2s;
+          -o-transition: 0.2s;
+          -webkit-transition: 0.2s;
+        }
+
+        .content {
+            color: white;
+            font-size: 13px;
+        }
+        .field {
+            font-weight: 600;
+        }
+    }
+
+    @media (max-width: 479px) {
+        .seven-cols {
+            margin: auto;
+            width: 180px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .seven-cols .col-md-1,
+        .seven-cols .col-sm-1,
+        .seven-cols .col-lg-1 {
+            width: 16.6666666667%;
+            *width: 16.6666666667%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .seven-cols .col-md-1,
+        .seven-cols .col-sm-1,
+        .seven-cols .col-lg-1 {
+            width: 14.285714285714285714285714285714%;
+            *width: 14.285714285714285714285714285714%;
+        }
+    }
+    /* 14% = 100% (full-width row) divided by 7 */
+}

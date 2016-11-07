@@ -1,0 +1,31 @@
+<div class="container-fluid search-wrapper">
+    <div class="input-group">
+        <input class="form-control"
+               placeholder="Search for..."
+               autofocus
+               [formControl]="term">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </button>
+        </span>
+    </div>
+</div>
+
+<div class="container-fluid search-results-wrapper">
+  <div class="no-items" [hidden]="(items | async)?.length">no items</div>
+  <div class="row seven-cols" imageLazyLoadArea>
+    <div class="col-md-1 col-sm-3 col-xs-4 col-xxs-12" *ngFor="let item of items | async">
+      <div class="dimmable">
+        <img class="img-responsive poster" [imageLazyLoadItem]="item.poster_path" width="150" height="150">
+        <div class="dimmer">
+          <div class="content">
+            <div class="release-date"><span class="field">Release:</span> {{item.release_date}}</div>
+            <div class="vote-average"><span class="field">Vote:</span> {{item.vote_average}}</div>
+          </div>
+        </div>
+      </div>
+      <h4 class="poster-title">{{item.title}}</h4>
+    </div>
+  </div>
+</div>
